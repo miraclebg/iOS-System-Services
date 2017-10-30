@@ -25,7 +25,17 @@ iOS System Services is available through [CocoaPods](http://cocoapods.org). To i
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SystemServices', '~> 2.0.0'
+pod 'SystemServices', '~> 2.0.1'
+```
+
+## Usage
+
+```objective-c
+// Import System Services
+#import "SystemServices.h"
+
+// Log all System Information
+NSLog(@"All System Information: %@", [SystemServices sharedServices].allSystemInformation);	
 ```
 
 ## Changes
@@ -43,252 +53,261 @@ pod 'SystemServices', '~> 2.0.0'
 
 // Properties
 
-    /* All System Information in Dictionary Format */
-    NSDictionary *allSystemInformation;
+/* All System Information in Dictionary Format */
+NSDictionary *allSystemInformation;
 
-    /* Hardware Information */
+/* Hardware Information */
 
-    // System Uptime (dd hh mm)
-    NSString *systemsUptime;
+// System Uptime (dd hh mm)
+NSString *systemsUptime;
 
-    // Model of Device
-    NSString *deviceModel;
+// Model of Device
+NSString *deviceModel;
 
-    // Device Name
-    NSString *deviceName;
+// Device Name
+NSString *deviceName;
 
-    // System Name
-    NSString *systemName;
+// System Name
+NSString *systemName;
 
-    // System Version
-    NSString *systemsVersion;
+// System Version
+NSString *systemsVersion;
 
-    // System Device Type (Not Formatted = iPhone1,0)
-    NSString *systemDeviceTypeNotFormatted;
+// System Device Type (Not Formatted = iPhone1,0)
+NSString *systemDeviceTypeNotFormatted;
 
-    // System Device Type (Formatted = iPhone 1)
-    NSString *systemDeviceTypeFormatted;
+// System Device Type (Formatted = iPhone 1)
+NSString *systemDeviceTypeFormatted;
 
-    // Get the Screen Width (X)
-    NSInteger screenWidth;
+// Get the Screen Width (X)
+NSInteger screenWidth;
 
-    // Get the Screen Height (Y)
-    NSInteger screenHeight;
+// Get the Screen Height (Y)
+NSInteger screenHeight;
 
-    // Get the Screen Brightness
-    float screenBrightness;
+// Get the Screen Brightness
+float screenBrightness;
 
-    // Multitasking enabled?
-    BOOL multitaskingEnabled;
+// Multitasking enabled?
+BOOL multitaskingEnabled;
 
-    // Proximity sensor enabled?
-    BOOL proximitySensorEnabled;
+// Proximity sensor enabled?
+BOOL proximitySensorEnabled;
 
-    // Debugger Attached?
-    BOOL debuggerAttached;
+// Debugger Attached?
+BOOL debuggerAttached;
 
-    // Plugged In?
-    BOOL pluggedIn;
+// Plugged In?
+BOOL pluggedIn;
 
-    /* Jailbreak Check */
+// Step-Counting Available?
+BOOL stepCountingAvailable;
 
-    // Jailbroken?
-    int jailbroken;
+// Distance Available
+BOOL distanceAvailable;
 
-    /* Processor Information */
+// Floor Counting Available
+BOOL floorCountingAvailable;
 
-    // Number of processors
-    NSInteger numberProcessors;
+/* Jailbreak Check */
 
-    // Number of Active Processors
-    NSInteger numberActiveProcessors;
+// Jailbroken?
+int jailbroken;
 
-    // Processor Usage Information
-    NSArray *processorsUsage;
+/* Processor Information */
 
-    /* Accessory Information */
+// Number of processors
+NSInteger numberProcessors;
 
-    // Are any accessories attached?
-    BOOL accessoriesAttached;
+// Number of Active Processors
+NSInteger numberActiveProcessors;
 
-    // Are headphone attached?
-    BOOL headphonesAttached;
+// Processor Usage Information
+NSArray *processorsUsage;
 
-    // Number of attached accessories
-    NSInteger numberAttachedAccessories;
+/* Accessory Information */
 
-    // Name of attached accessory/accessories (seperated by , comma's)
-    NSString *nameAttachedAccessories;
+// Are any accessories attached?
+BOOL accessoriesAttached;
 
-    /* Carrier Information */
+// Are headphone attached?
+BOOL headphonesAttached;
 
-    // Carrier Name
-    NSString *carrierName;
+// Number of attached accessories
+NSInteger numberAttachedAccessories;
 
-    // Carrier Country
-    NSString *carrierCountry;
+// Name of attached accessory/accessories (seperated by , comma's)
+NSString *nameAttachedAccessories;
 
-    // Carrier Mobile Country Code
-    NSString *carrierMobileCountryCode;
+/* Carrier Information */
 
-    // Carrier ISO Country Code
-    NSString *carrierISOCountryCode;
+// Carrier Name
+NSString *carrierName;
 
-    // Carrier Mobile Network Code
-    NSString *carrierMobileNetworkCode;
+// Carrier Country
+NSString *carrierCountry;
 
-    // Carrier Allows VOIP
-    BOOL carrierAllowsVOIP;
+// Carrier Mobile Country Code
+NSString *carrierMobileCountryCode;
 
-    /* Battery Information */
+// Carrier ISO Country Code
+NSString *carrierISOCountryCode;
 
-    // Battery Level
-    float batteryLevel;
+// Carrier Mobile Network Code
+NSString *carrierMobileNetworkCode;
 
-    // Charging?
-    BOOL charging;
+// Carrier Allows VOIP
+BOOL carrierAllowsVOIP;
 
-    // Fully Charged?
-    BOOL fullyCharged;
+/* Battery Information */
 
-    /* Network Information */
+// Battery Level
+float batteryLevel;
 
-    // Get Current IP Address
-    NSString *currentIPAddress;
+// Charging?
+BOOL charging;
 
-    // Get External IP Address
-    NSString *externalIPAddress;
+// Fully Charged?
+BOOL fullyCharged;
 
-    // Get Cell IP Address
-    NSString *cellIPAddress;
+/* Network Information */
 
-    // Get Cell Netmask Address
-    NSString *cellNetmaskAddress;
+// Get Current IP Address
+NSString *currentIPAddress;
 
-    // Get Cell Broadcast Address
-    NSString *cellBroadcastAddress;
+// Get External IP Address
+NSString *externalIPAddress;
 
-    // Get WiFi IP Address
-    NSString *wiFiIPAddress;
+// Get Cell IP Address
+NSString *cellIPAddress;
 
-    // Get WiFi Netmask Address
-    NSString *wiFiNetmaskAddress;
+// Get Cell Netmask Address
+NSString *cellNetmaskAddress;
 
-    // Get WiFi Broadcast Address
-    NSString *wiFiBroadcastAddress;
+// Get Cell Broadcast Address
+NSString *cellBroadcastAddress;
 
-    // Get WiFi Router Address
-    NSString *wiFiRouterAddress;
+// Get WiFi IP Address
+NSString *wiFiIPAddress;
 
-    // Connected to WiFi?
-    BOOL connectedToWiFi;
+// Get WiFi Netmask Address
+NSString *wiFiNetmaskAddress;
 
-    // Connected to Cellular Network?
-    BOOL connectedToCellNetwork;
+// Get WiFi Broadcast Address
+NSString *wiFiBroadcastAddress;
 
-    /* Process Information */
+// Get WiFi Router Address
+NSString *wiFiRouterAddress;
 
-    // Process ID
-    int processID;
+// Connected to WiFi?
+BOOL connectedToWiFi;
 
-    /* Disk Information */
+// Connected to Cellular Network?
+BOOL connectedToCellNetwork;
 
-    // Total Disk Space
-    NSString *diskSpace;
+/* Process Information */
 
-    // Total Free Disk Space (Raw)
-    NSString *freeDiskSpaceinRaw;
+// Process ID
+int processID;
 
-    // Total Free Disk Space (Percentage)
-    NSString *freeDiskSpaceinPercent;
+/* Disk Information */
 
-    // Total Used Disk Space (Raw)
-    NSString *usedDiskSpaceinRaw;
+// Total Disk Space
+NSString *diskSpace;
 
-    // Total Used Disk Space (Percentage)
-    NSString *usedDiskSpaceinPercent;
+// Total Free Disk Space (Raw)
+NSString *freeDiskSpaceinRaw;
 
-    // Get the total disk space in long format
-    long long longDiskSpace;
+// Total Free Disk Space (Percentage)
+NSString *freeDiskSpaceinPercent;
 
-    // Get the total free disk space in long format
-    long long longFreeDiskSpace;
+// Total Used Disk Space (Raw)
+NSString *usedDiskSpaceinRaw;
 
-    /* Memory Information */
+// Total Used Disk Space (Percentage)
+NSString *usedDiskSpaceinPercent;
 
-    // Total Memory
-    double totalMemory;
+// Get the total disk space in long format
+long long longDiskSpace;
 
-    // Free Memory (Raw)
-    double freeMemoryinRaw;
+// Get the total free disk space in long format
+long long longFreeDiskSpace;
 
-    // Free Memory (Percent)
-    double freeMemoryinPercent;
+/* Memory Information */
 
-    // Used Memory (Raw)
-    double usedMemoryinRaw;
+// Total Memory
+double totalMemory;
 
-    // Used Memory (Percent)
-    double usedMemoryinPercent;
+// Free Memory (Raw)
+double freeMemoryinRaw;
 
-    // Active Memory (Raw)
-    double activeMemoryinRaw;
+// Free Memory (Percent)
+double freeMemoryinPercent;
 
-    // Active Memory (Percent)
-    double activeMemoryinPercent;
+// Used Memory (Raw)
+double usedMemoryinRaw;
 
-    // Inactive Memory (Raw)
-    double inactiveMemoryinRaw;
+// Used Memory (Percent)
+double usedMemoryinPercent;
 
-    // Inactive Memory (Percent)
-    double inactiveMemoryinPercent;
+// Active Memory (Raw)
+double activeMemoryinRaw;
 
-    // Wired Memory (Raw)
-    double wiredMemoryinRaw;
+// Active Memory (Percent)
+double activeMemoryinPercent;
 
-    // Wired Memory (Percent)
-    double wiredMemoryinPercent;
+// Inactive Memory (Raw)
+double inactiveMemoryinRaw;
 
-    // Purgable Memory (Raw)
-    double purgableMemoryinRaw;
+// Inactive Memory (Percent)
+double inactiveMemoryinPercent;
 
-    // Purgable Memory (Percent)
-    double purgableMemoryinPercent;
+// Wired Memory (Raw)
+double wiredMemoryinRaw;
 
-    /* Accelerometer Information */
+// Wired Memory (Percent)
+double wiredMemoryinPercent;
 
-    // Device Orientation
-    UIInterfaceOrientation deviceOrientation;
+// Purgable Memory (Raw)
+double purgableMemoryinRaw;
 
-    /* Localization Information */
+// Purgable Memory (Percent)
+double purgableMemoryinPercent;
 
-    // Country
-    NSString *country;
+/* Accelerometer Information */
 
-    // Language
-    NSString *language;
+// Device Orientation
+UIInterfaceOrientation deviceOrientation;
 
-    // TimeZone
-    NSString *timeZoneSS;
+/* Localization Information */
 
-    // Currency Symbol
-    NSString *currency;
+// Country
+NSString *country;
 
-    /* Application Information */
+// Language
+NSString *language;
 
-    // Application Version
-    NSString *applicationVersion;
+// TimeZone
+NSString *timeZoneSS;
 
-    // Clipboard Content
-    NSString *clipboardContent;
+// Currency Symbol
+NSString *currency;
 
-    // Application CPU Usage
-    float applicationCPUUsage;
+/* Application Information */
 
-    /* Universal Unique Identifiers */
+// Application Version
+NSString *applicationVersion;
 
-    // CFUUID
-    NSString *cfuuid;
+// Clipboard Content
+NSString *clipboardContent;
+
+// Application CPU Usage
+float applicationCPUUsage;
+
+/* Universal Unique Identifiers */
+
+// CFUUID
+NSString *cfuuid;
 ```
 
 ## Third-Party Plugins
